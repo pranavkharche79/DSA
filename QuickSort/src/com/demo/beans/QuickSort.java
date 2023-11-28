@@ -3,11 +3,12 @@ package com.demo.beans;
 import java.util.Arrays;
 
 public class QuickSort {
-
+	static int cnt=0;
 	public static void quicksort(int[] a, int lb, int ub) {
 		
 		if(lb<ub) {
-			System.out.println("After partition\n"+Arrays.toString(a)+"\n");
+			cnt++;
+			System.out.println("Iteration= "+cnt+"\n"+Arrays.toString(a)+"\n");
 			int loc=partition(a,lb,ub);
 			quicksort(a, lb, loc-1);
 			quicksort(a, loc+1, ub);

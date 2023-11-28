@@ -1,20 +1,22 @@
 package com.demo.beans;
 
-import java.util.Arrays;
 
 public class Merg {
+	public static int cnt;
+	static {
+		cnt=0;
+	}
 
 	//for Dividing the given array into array of size 1
-	public static void mergesort(int[] a, int start, int end) {
+	public static int mergesort(int[] a, int start, int end) {
 		if(start<end) {
-			System.out.println(Arrays.toString(a));
+			cnt++;
 			int mid=(start+end)/2;
 			mergesort(a, start, mid);
 			mergesort(a, mid+1, end);
 			merge(a,start,mid,end);
 		}
-		
-		
+		return cnt;
 	}
 
 	//For Merging(Conquering) the Array 
